@@ -1,0 +1,53 @@
+<center>
+<h1 class="d-flex">
+    <img class="mr-10" src="https://img.icons8.com/clouds/80/000000/edit.png">
+    <div>Edit Story</div>
+</h1>
+</center>
+<div class="row">
+  <form action="/stories/{{story.id}}?_method=PUT" method="post" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="row">
+      <div class="input-field">
+        <input type="text" name="title" value={{story.title}}>
+        <label for="title">Please Type Your title</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <select name="status">
+          {{#select story.status}}
+          <option value="public" selected>Public</option>
+          <option value="private">Private</option>
+          <option value="Unpublished">Unpublished</option>
+          {{/select}}
+        </select>
+        <label for="status">
+          Status
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <p>
+        <input type="checkbox" name="allowComments" class="filled-in" id="filled-in-box"
+          {{#if story.allowComments}}checked="checked" {{/if}}>
+        <label for="filled-in-box">Allow comments</label>
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <h5>Tell us Your Story</h5>
+        <textarea name="body">{{story.body}}</textarea>
+      </div>
+    </div>
+<center>
+ <button class="btn waves-effect waves-light" type="submit">
+            <i class="fa fa-floppy-o"></i>
+            Save
+        </button>
+        </center>
+  </form>
+</div>
