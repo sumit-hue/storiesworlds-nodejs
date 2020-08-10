@@ -1,8 +1,8 @@
 {
   "name": "writerbook",
   "version": "1.0.0",
-  "description": "live link  https://dipaknodeproject.herokuapp.com/",
-  "main": "app.js",
+  "description": "live link  https://writerbook.herokuapp.com/",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
